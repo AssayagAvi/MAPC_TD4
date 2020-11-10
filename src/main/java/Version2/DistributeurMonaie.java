@@ -20,10 +20,10 @@ public class DistributeurMonaie implements DistributeurEtat {
     }
 
     @Override
-    public int refund(Distributeur distributeur) {
+    public void refund(Distributeur distributeur) {
         int caisseActuelle = distributeur.caisse();
         distributeur.resetCaisse();
         distributeur.setEtat(DistributeurMonaie.instance());
-        return caisseActuelle;
+        System.out.println("caisseActuelle = " + caisseActuelle);
     }
 }
