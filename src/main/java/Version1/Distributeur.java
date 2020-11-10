@@ -11,8 +11,15 @@ public class Distributeur {
 
     }
 
+
     public void setEtat(DistributeurEtat etat) {
         this.etat = etat;
+    }
+    public int caisse(){
+        return caisse;
+    }
+    public void resetCaisse(){
+        caisse = 0;
     }
 
     public void askTea(){
@@ -23,8 +30,8 @@ public class Distributeur {
         this.etat.askCoffee(this);
     }
 
-    public void give(){
-        this.etat.give(this);
+    public void give(int n){
+        caisse = caisse + n;
     }
 }
 

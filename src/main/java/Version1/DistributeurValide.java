@@ -20,8 +20,4 @@ public class DistributeurValide implements DistributeurEtat {
 
     }
 
-    @Override
-    public void give(Distributeur distributeur) {
-
-    }
 }

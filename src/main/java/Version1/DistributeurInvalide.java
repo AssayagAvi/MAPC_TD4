@@ -21,8 +21,4 @@ public class DistributeurInvalide implements DistributeurEtat {
 
     }
 
-    @Override
-    public void give(Distributeur distributeur) {
-
-    }
 }
