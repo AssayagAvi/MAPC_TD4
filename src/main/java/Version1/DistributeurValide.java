@@ -33,8 +33,9 @@ public class DistributeurValide implements DistributeurEtat {
             distributeur.setEtat(DistributeurValide.instance());
 
         } else {
-            System.out.println(" Commande ok");
+            System.out.println(" Pas assez d'argent");
             distributeur.setEtat(DistributeurInvalide.instance());
+
         }
 
     }
