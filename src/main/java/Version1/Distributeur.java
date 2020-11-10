@@ -23,5 +23,8 @@ public class Distributeur {
         this.etat.askCoffee(this);
     }
 
+    public void give(){
+        this.etat.give(this);
+    }
 }
 
