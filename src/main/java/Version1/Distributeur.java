@@ -1,6 +1,7 @@
 package Version1;
 
 public class Distributeur {
+
     private int caisse;
     private DistributeurEtat etat;
     private int n;
@@ -18,6 +19,7 @@ public class Distributeur {
     public int caisse(){
         return caisse;
     }
+
     public void resetCaisse(){
         caisse = 0;
     }
