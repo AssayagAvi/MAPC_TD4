@@ -15,8 +15,9 @@ public class DistributeurValide implements DistributeurEtat {
     public void askTea(Distributeur distributeur) {
         if (distributeur.caisse() > 10) {
             System.out.println("Commande Ok");
-            distributeur.resetCaisse();
-            distributeur.setEtat(DistributeurValide.instance());
+            distributeur.setEtat(DistributeurMonaie.instance());
+            int c = distributeur.caisse();
+            c = c-10;
 
         } else {
             System.out.println(" pas assez d'argent");
@@ -29,7 +30,9 @@ public class DistributeurValide implements DistributeurEtat {
     public void askCoffee(Distributeur distributeur) {
         if (distributeur.caisse() > 10) {
             System.out.println("Commande Ok");
-            distributeur.setEtat(DistributeurValide.instance());
+            distributeur.setEtat(DistributeurMonaie.instance());
+            int c = distributeur.caisse();
+            c = c-10;
 
         } else {
             System.out.println(" Pas assez d'argent");
@@ -40,8 +43,11 @@ public class DistributeurValide implements DistributeurEtat {
     }
 
     @Override
-    public void refund() {
-
+    public int refund(Distributeur distributeur) {
+        int caisseActuelle = distributeur.caisse();
+        distributeur.resetCaisse();
+        distributeur.setEtat(DistributeurMonaie.instance());
+        return caisseActuelle;
     }
 }
 

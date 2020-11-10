@@ -5,6 +5,7 @@ public class App {
         Distributeur distributeur = new Distributeur();
         distributeur.askCoffee();
         distributeur.give(2);
+        distributeur.refund();
         distributeur.askCoffee();
         distributeur.give(6);
         distributeur.askCoffee();

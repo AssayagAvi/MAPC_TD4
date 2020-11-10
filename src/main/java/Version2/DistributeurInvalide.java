@@ -21,7 +21,9 @@ public class DistributeurInvalide implements DistributeurEtat {
         }
         else{
             System.out.println(" Commande ok" );
-            distributeur.setEtat(DistributeurValide.instance());
+            distributeur.setEtat(DistributeurMonaie.instance());
+            int c = distributeur.caisse();
+            c = c-10;
 
         }
     }
@@ -31,19 +33,23 @@ public class DistributeurInvalide implements DistributeurEtat {
         if(distributeur.caisse() <10){
             System.out.println("pas assez d'argent");
             distributeur.setEtat(DistributeurInvalide.instance());
-
         }
         else{
             System.out.println(" Commande ok" );
-            distributeur.setEtat(DistributeurValide.instance());
+            distributeur.setEtat(DistributeurMonaie.instance());
+            int c = distributeur.caisse();
+            c = c-10;
 
         }
 
     }
 
     @Override
-    public void refund() {
-
+    public int refund(Distributeur distributeur) {
+        int caisseActuelle = distributeur.caisse();
+        distributeur.resetCaisse();
+        distributeur.setEtat(DistributeurMonaie.instance());
+        return caisseActuelle;
     }
 
 }

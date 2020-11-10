@@ -35,5 +35,7 @@ public class Distributeur {
     public void give(int n){
         caisse = caisse + n;
     }
+
+    public void refund(){this.etat.refund(this);}
 }
 
